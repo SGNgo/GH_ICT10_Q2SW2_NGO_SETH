@@ -37,3 +37,25 @@ def calculate(evt=None):
     gwa = weighted_sum // total_units  
 
     display(f"General Weighted Average (GWA): {gwa}", target="output")
+
+#GWA REMARKS
+def passing_failing(evt=None):
+   
+    math = int(document.getElementById("math").value)
+    science = int(document.getElementById("science").value)
+    english = int(document.getElementById("english").value)
+    filipino = int(document.getElementById("filipino").value)
+    pe = int(document.getElementById("pe").value)
+
+    units = (5, 5, 5, 3, 1)
+    grades = (math, science, english, filipino, pe)
+
+    weighted_sum = math*5 + science*5 + english*5 + filipino*3 + pe*1
+    total_units = 5 + 5 + 5 + 3 + 1
+    gwa = weighted_sum // total_units
+
+    document.getElementById('output').innerHTML = ''
+    if gwa > 74:
+        display(f'GWA {gwa} is passing✅', target='output')
+    else:
+        display(f'GWA {gwa} is failing❌', target='output')
